@@ -81,26 +81,26 @@ public class WandController : MonoBehaviour
     }
 
     public void PerformCongelarDescongelar(){
-        Ray ray = new Ray(rightController.transform.position, rightController.transform.forward);
-        Debug.Log("RAY");
-        if (Physics.Raycast(ray, out RaycastHit hit, 10000f))
-        {
-            Debug.Log("RAY");
-            CongelableManager congelable = hit.collider.attachedRigidbody.GetComponent<CongelableManager>();
-
-            if (congelable != null)
+        if (magicList[_currentIndex] == Magic.Gel || magicList[_currentIndex] == Magic.Foc){
+            Ray ray = new Ray(rightController.transform.position, rightController.transform.forward);
+            if (Physics.Raycast(ray, out RaycastHit hit, 10000f))
             {
-                Debug.Log("HIT");
-                if (magicList[_currentIndex] == Magic.Gel)
+                CongelableManager congelable = hit.collider.attachedRigidbody?.GetComponent<CongelableManager>();
+
+                if (congelable != null)
                 {
-                    congelable.Congela();
-                }
-                else if (magicList[_currentIndex] == Magic.Foc)
-                {
-                    congelable.Descongela();
+                    if (magicList[_currentIndex] == Magic.Gel)
+                    {
+                        congelable.Congela();
+                    }
+                    else if (magicList[_currentIndex] == Magic.Foc)
+                    {
+                        congelable.Descongela();
+                    }
                 }
             }
         }
+        
     }
 
     private void UpdateMagicSelected(){
