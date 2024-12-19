@@ -86,7 +86,7 @@ public class WandController : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, 10000f))
         {
             Debug.Log("RAY");
-            CongelableManager congelable = hit.collider.GetComponent<CongelableManager>();
+            CongelableManager congelable = hit.collider.attachedRigidbody.GetComponent<CongelableManager>();
 
             if (congelable != null)
             {
