@@ -1945,7 +1945,7 @@
                 {
                     "name": "",
                     "id": "a7c5c3cc-147e-423b-ba87-e496a1a02a65",
-                    "path": "",
+                    "path": "<XRController>{RightHand}/{GripButton}",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
