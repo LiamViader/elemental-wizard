@@ -46,6 +46,10 @@ public class InteractuableMagic : MonoBehaviour
         OnMagicChanged(lastMagicSelected);
     }
 
+    public bool CanInteract(Magic selectedMagic)
+    {
+        return activat && selectedMagic == magicType;
+    }
 
     void OnMagicChanged(Magic newMagic)
     {

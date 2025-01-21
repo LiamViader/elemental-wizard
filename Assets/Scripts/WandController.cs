@@ -101,11 +101,11 @@ public class WandController : MonoBehaviour
         {
             InteractuableMagic interactuableMagic = hit.collider.GetComponent<InteractuableMagic>();
 
-            if (interactuableMagic != null)
+            if (interactuableMagic != null && interactuableMagic.CanInteract(magicList[_currentIndex]))
             {
                 if (!alreadyUsedHaptics.Contains(interactuableMagic))
                 {
-                    newAlreadyUsedHaptics.Add(interactuableMagic);
+                    HapticSingleton.Instance.HapticImpulse(HapticSingleton.Contol.right, 0.5f, 1f);
                 }
                 newAlreadyUsedHaptics.Add(interactuableMagic);
             }
