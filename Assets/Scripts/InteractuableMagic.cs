@@ -14,50 +14,65 @@ public class InteractuableMagic : MonoBehaviour
     [SerializeField]
     private Magic magicType;
 
+    private Magic lastMagicSelected=Magic.Terra;
 
+    private bool activat = true;
 
     void OnEnable()
     {
         
     }
 
-    // Cancelar la suscripción cuando el objeto se desactive
     void OnDisable()
     {
         WandController.Instance.MagicChanged -= OnMagicChanged;
     }
 
-    // Start is called before the first frame update
+
     void Start()
     {
 
         WandController.Instance.MagicChanged += OnMagicChanged;
     }
 
+    public void Desactivar()
+    {
+        activat = false;
+    }
+
+    public void Activar()
+    {
+        activat = true;
+        OnMagicChanged(lastMagicSelected);
+    }
 
 
     void OnMagicChanged(Magic newMagic)
     {
-        foreach (var monoBehaviour in controledByMagicList)
+        lastMagicSelected = newMagic;
+        if (activat)
         {
-            if (newMagic == magicType)
+            foreach (var monoBehaviour in controledByMagicList)
             {
-                monoBehaviour.enabled = true;
+                if (newMagic == magicType)
+                {
+                    monoBehaviour.enabled = true;
+                }
+                else
+                {
+                    monoBehaviour.enabled = false;
+                }
             }
-            else
+            foreach (var monoBehaviour in controledByMagicListColliders)
             {
-                monoBehaviour.enabled = false;
-            }
-        }
-        foreach (var monoBehaviour in controledByMagicListColliders)
-        {
-            if (newMagic == magicType)
-            {
-                monoBehaviour.enabled = true;
-            }
-            else
-            {
-                monoBehaviour.enabled = false;
+                if (newMagic == magicType)
+                {
+                    monoBehaviour.enabled = true;
+                }
+                else
+                {
+                    monoBehaviour.enabled = false;
+                }
             }
         }
 

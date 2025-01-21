@@ -83,10 +83,15 @@ public class WandController : MonoBehaviour
         UpdateMagicSelected();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        HapticsIfPointingNewInteractable();
+    }
+
+    private void HapticsIfPointingInteractable()
+    {
+
     }
 
     public void PerformMagicSwap()

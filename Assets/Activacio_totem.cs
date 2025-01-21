@@ -12,6 +12,8 @@ public class Totem : MonoBehaviour
     [SerializeField]
     private GameObject snapVolume;
 
+    [SerializeField]
+    private InteractuableMagic interactuableMagic;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,7 @@ public class Totem : MonoBehaviour
 
     public void Activar()
     {
+        interactuableMagic?.Activar();
         encen.SetActive(true);
         apagat.SetActive(false);
         activat = true;
@@ -37,6 +40,7 @@ public class Totem : MonoBehaviour
 
     public void Desactivar()
     {
+        interactuableMagic?.Desactivar();
         encen.SetActive(false);
         apagat.SetActive(true);
         activat = false;
