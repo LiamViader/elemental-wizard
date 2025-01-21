@@ -9,6 +9,9 @@ public class InteractuableMagic : MonoBehaviour
     private List<MonoBehaviour> controledByMagicList;
 
     [SerializeField]
+    private List<Collider> controledByMagicListColliders;
+
+    [SerializeField]
     private Magic magicType;
 
 
@@ -36,6 +39,17 @@ public class InteractuableMagic : MonoBehaviour
     void OnMagicChanged(Magic newMagic)
     {
         foreach (var monoBehaviour in controledByMagicList)
+        {
+            if (newMagic == magicType)
+            {
+                monoBehaviour.enabled = true;
+            }
+            else
+            {
+                monoBehaviour.enabled = false;
+            }
+        }
+        foreach (var monoBehaviour in controledByMagicListColliders)
         {
             if (newMagic == magicType)
             {

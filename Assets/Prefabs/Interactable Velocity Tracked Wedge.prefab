@@ -227,7 +227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a703d9d9e7b694fb6915d21165d947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabable: {fileID: 4257412417454173058}
+  controledByMagicList:
+  - {fileID: 4257412417454173058}
   magicType: 0
 --- !u!1001 &3433992509968690860
 PrefabInstance:
