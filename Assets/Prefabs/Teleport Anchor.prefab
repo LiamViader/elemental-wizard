@@ -85,4 +85,4 @@ MonoBehaviour:
   controledByMagicList: []
   controledByMagicListColliders:
   - {fileID: 626580157840073398}
-  magicType: 0
+  magicType: 3
