@@ -6,10 +6,12 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class InteractuableMagic : MonoBehaviour
 {
     [SerializeField]
-    private MonoBehaviour grabable;
+    private List<MonoBehaviour> controledByMagicList;
 
     [SerializeField]
     private Magic magicType;
+
+
 
     void OnEnable()
     {
@@ -33,12 +35,17 @@ public class InteractuableMagic : MonoBehaviour
 
     void OnMagicChanged(Magic newMagic)
     {
-        if (newMagic == magicType)
+        foreach (var monoBehaviour in controledByMagicList)
         {
-            grabable.enabled = true;
+            if (newMagic == magicType)
+            {
+                monoBehaviour.enabled = true;
+            }
+            else
+            {
+                monoBehaviour.enabled = false;
+            }
         }
-        else {
-            grabable.enabled = false;
-        }
+
     }
 }

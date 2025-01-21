@@ -84,7 +84,6 @@ public class WandController : MonoBehaviour
 
     public void PerformMagicSwap()
     {
-        Debug.Log("ADASDDS");
         RotateMagic();
         UpdateMagicSelected();
         UpdateOrbMaterial();
