@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2846804601629457214}
+  - component: {fileID: 105917453844987869}
   m_Layer: 0
   m_Name: Bacul
   m_TagString: Untagged
@@ -64,6 +65,49 @@ Transform:
   - {fileID: 8112245914647546642}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &105917453844987869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6760402204340310454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3820f9671c3078499fb949e36b1da70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magicList: 00000000010000000200000003000000
+  magicMaterial:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_MagicSwapAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Grab Move
+      m_Type: 1
+      m_ExpectedControlType: 
+      m_Id: 98b42065-05ef-4be2-b415-b37a5f49ac85
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -8679794662450762501, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_CongelarDescongelarAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Grab Move
+      m_Type: 1
+      m_ExpectedControlType: 
+      m_Id: 54443857-da33-4f95-a0b6-f365becd7b55
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -6677137209905959830, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rightController: {fileID: 0}
 --- !u!1 &7085449206008098173
 GameObject:
   m_ObjectHideFlags: 0

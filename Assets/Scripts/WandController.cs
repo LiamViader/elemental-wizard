@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR;
 
 public enum Magic
 {
@@ -17,10 +18,18 @@ public class WandController : MonoBehaviour
 {
 
 
+    private Material _currentMaterial;
+
     public static WandController Instance { get; private set; }
 
     private int _currentIndex;
+
+    [SerializeField]
     private List<Magic> magicList;
+
+    [SerializeField]
+    private List<Material> magicMaterial;
+
 
 
     [SerializeField]
@@ -31,7 +40,7 @@ public class WandController : MonoBehaviour
     [Tooltip("The Input System Action that will be used to perform the magic swap. Must be a Button Control.")]
     InputActionProperty m_CongelarDescongelarAction = new InputActionProperty(new InputAction("Grab Move", type: InputActionType.Button));
 
-    [SerializeField] private ActionBasedController rightController;
+    private ActionBasedController rightController;
 
     
     public event System.Action<Magic> MagicChanged;
@@ -51,9 +60,31 @@ public class WandController : MonoBehaviour
 
     }
 
-
     void Start()
     {
+        // Buscamos todos los ActionBasedControllers en la escena
+        ActionBasedController[] controllers = FindObjectsOfType<ActionBasedController>();
+
+        // Buscamos el controlador que corresponda a la mano derecha
+        foreach (var controller in controllers)
+        {
+            // Accedemos al XRController desde el ActionBasedController
+            XRController xrController = controller.GetComponent<XRController>();
+
+            if (xrController != null && xrController.controllerNode == XRNode.RightHand)
+            {
+                rightController = controller;
+                break;
+            }
+        }
+
+
+        if (rightController == null)
+        {
+            Debug.LogError("No se ha encontrado un ActionBasedController para la mano derecha en la escena.");
+        }
+
+
         magicList = new List<Magic> { Magic.Aire, Magic.Gel, Magic.Foc, Magic.Terra };
 
         _currentIndex = 0;
