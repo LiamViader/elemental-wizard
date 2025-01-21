@@ -1077,7 +1077,7 @@
                     "path": "<XRController>{LeftHand}/{Primary2DAxis}",
                     "interactions": "Sector(directions=12,sweepBehavior=1),Sector(directions=2,sweepBehavior=2)",
                     "processors": "",
-                    "groups": "Noncontinuous Move",
+                    "groups": "Noncontinuous Move;Continuous Move",
                     "action": "Turn",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1129,7 +1129,7 @@
                 {
                     "name": "",
                     "id": "a3467240-7e35-416c-8cb8-df9efa852df0",
-                    "path": "<XRController>{LeftHand}/{GripButton}",
+                    "path": "<TrackedDevice>/{Secondary2DAxisClick}",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
