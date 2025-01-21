@@ -30,7 +30,10 @@ public class WandController : MonoBehaviour
     [SerializeField]
     private List<Material> magicMaterial;
 
+    private HashSet<InteractuableMagic> alreadyUsedHaptics  = new HashSet<InteractuableMagic>();
 
+    [SerializeField]
+    private float wandMagicDistance = 10000f;
 
     [SerializeField]
     [Tooltip("The Input System Action that will be used to perform the magic swap. Must be a Button Control.")]
@@ -45,6 +48,7 @@ public class WandController : MonoBehaviour
 
     
     public event System.Action<Magic> MagicChanged;
+
 
     
     private void Awake()
@@ -89,8 +93,24 @@ public class WandController : MonoBehaviour
         HapticsIfPointingNewInteractable();
     }
 
-    private void HapticsIfPointingInteractable()
+    private void HapticsIfPointingNewInteractable()
     {
+        HashSet<InteractuableMagic> newAlreadyUsedHaptics = new HashSet<InteractuableMagic>();
+        Ray ray = new Ray(rightController.transform.position, rightController.transform.forward);
+        if (Physics.Raycast(ray, out RaycastHit hit, wandMagicDistance))
+        {
+            InteractuableMagic interactuableMagic = hit.collider.GetComponent<InteractuableMagic>();
+
+            if (interactuableMagic != null)
+            {
+                if (!alreadyUsedHaptics.Contains(interactuableMagic))
+                {
+                    newAlreadyUsedHaptics.Add(interactuableMagic);
+                }
+                newAlreadyUsedHaptics.Add(interactuableMagic);
+            }
+        }
+        alreadyUsedHaptics = newAlreadyUsedHaptics;
 
     }
 
@@ -104,7 +124,7 @@ public class WandController : MonoBehaviour
     public void PerformCongelarDescongelar(){
         if (magicList[_currentIndex] == Magic.Gel || magicList[_currentIndex] == Magic.Foc){
             Ray ray = new Ray(rightController.transform.position, rightController.transform.forward);
-            if (Physics.Raycast(ray, out RaycastHit hit, 10000f))
+            if (Physics.Raycast(ray, out RaycastHit hit, wandMagicDistance))
             {
                 CongelableManager congelable = hit.collider.attachedRigidbody?.GetComponent<CongelableManager>();
 
