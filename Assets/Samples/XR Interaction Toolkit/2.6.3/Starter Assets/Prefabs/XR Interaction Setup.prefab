@@ -258,6 +258,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3820f9671c3078499fb949e36b1da70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orbMesh: {fileID: 0}
+  magicList: 
+  magicMaterial: []
   m_MagicSwapAction:
     m_UseReference: 1
     m_Action:
