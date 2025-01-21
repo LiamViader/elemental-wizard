@@ -73,6 +73,13 @@ public class WandController : MonoBehaviour
         m_CongelarDescongelarAction.action.Enable();
         m_CongelarDescongelarAction.action.performed += ctx => PerformCongelarDescongelar();
 
+        StartCoroutine(DelayedMethod());
+    }
+
+    IEnumerator DelayedMethod()
+    {
+        yield return new WaitForSeconds(0.1f);
+
         UpdateMagicSelected();
     }
 
