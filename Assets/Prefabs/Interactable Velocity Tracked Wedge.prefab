@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4257412417454173056}
   - component: {fileID: 4257412417454173059}
   - component: {fileID: 4257412417454173058}
+  - component: {fileID: 1901035219366482095}
   m_Layer: 0
   m_Name: Interactable Velocity Tracked Wedge
   m_TagString: pes_boto
@@ -214,6 +215,20 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &1901035219366482095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4257412417454173071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a703d9d9e7b694fb6915d21165d947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabable: {fileID: 4257412417454173058}
+  magicType: 0
 --- !u!1001 &3433992509968690860
 PrefabInstance:
   m_ObjectHideFlags: 0
