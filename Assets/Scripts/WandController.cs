@@ -17,8 +17,8 @@ public enum Magic
 public class WandController : MonoBehaviour
 {
 
-
-    private Material _currentMaterial;
+    [SerializeField]
+    private MeshRenderer orbMesh;
 
     public static WandController Instance { get; private set; }
 
@@ -40,6 +40,7 @@ public class WandController : MonoBehaviour
     [Tooltip("The Input System Action that will be used to perform the magic swap. Must be a Button Control.")]
     InputActionProperty m_CongelarDescongelarAction = new InputActionProperty(new InputAction("Grab Move", type: InputActionType.Button));
 
+    [SerializeField]
     private ActionBasedController rightController;
 
     
@@ -62,30 +63,6 @@ public class WandController : MonoBehaviour
 
     void Start()
     {
-        // Buscamos todos los ActionBasedControllers en la escena
-        ActionBasedController[] controllers = FindObjectsOfType<ActionBasedController>();
-
-        // Buscamos el controlador que corresponda a la mano derecha
-        foreach (var controller in controllers)
-        {
-            // Accedemos al XRController desde el ActionBasedController
-            XRController xrController = controller.GetComponent<XRController>();
-
-            if (xrController != null && xrController.controllerNode == XRNode.RightHand)
-            {
-                rightController = controller;
-                break;
-            }
-        }
-
-
-        if (rightController == null)
-        {
-            Debug.LogError("No se ha encontrado un ActionBasedController para la mano derecha en la escena.");
-        }
-
-
-        magicList = new List<Magic> { Magic.Aire, Magic.Gel, Magic.Foc, Magic.Terra };
 
         _currentIndex = 0;
 
@@ -107,8 +84,10 @@ public class WandController : MonoBehaviour
 
     public void PerformMagicSwap()
     {
+        Debug.Log("ADASDDS");
         RotateMagic();
         UpdateMagicSelected();
+        UpdateOrbMaterial();
     }
 
     public void PerformCongelarDescongelar(){
@@ -142,12 +121,10 @@ public class WandController : MonoBehaviour
                 break;
 
             case Magic.Gel:
-                // Lógica para lanzar hechizo de Gel
                 Debug.Log("Lanzando hechizo de Gel: Congela un área a su alrededor.");
                 break;
 
             case Magic.Foc:
-                // Lógica para lanzar hechizo de Fuego
                 Debug.Log("Lanzando hechizo de Fuego: Dispara una bola de fuego.");
                 break;
 
@@ -156,6 +133,18 @@ public class WandController : MonoBehaviour
                 break;
         }
         MagicChanged?.Invoke(magicList[_currentIndex]);
+    }
+
+    private void UpdateOrbMaterial()
+    {
+        if (orbMesh != null && _currentIndex >= 0 && _currentIndex < magicMaterial.Count)
+        {
+            orbMesh.material = magicMaterial[_currentIndex];
+        }
+        else
+        {
+            Debug.LogWarning("El material no se pudo cambiar, asegúrate de que orbMesh y magicMaterial están configurados correctamente.");
+        }
     }
 
     public void RotateMagic()

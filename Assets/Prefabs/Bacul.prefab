@@ -77,12 +77,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3820f9671c3078499fb949e36b1da70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orbMesh: {fileID: 7456587125524192527}
   magicList: 00000000010000000200000003000000
   magicMaterial:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 297569dd47ab5f54d8bcce2cdc65b7f5, type: 2}
+  - {fileID: 2100000, guid: d5f4b8d83d721344e80550d761bcc573, type: 2}
+  - {fileID: 2100000, guid: 4a30f665e2b16384f94c7aa922cc8a4f, type: 2}
+  - {fileID: 2100000, guid: 6ea46318708db9f439fb03ee998e325f, type: 2}
   m_MagicSwapAction:
     m_UseReference: 1
     m_Action:
