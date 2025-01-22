@@ -18,7 +18,6 @@ public class CongelableManager : MonoBehaviour
     [SerializeField]
     private GameObject _liquidObject;
 
-    private bool movil;
 
     private void Awake(){
         UpdateState();
@@ -27,12 +26,7 @@ public class CongelableManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //grabInteractable = GetComponent<XRGrabInteractable>();
-        if (grabInteractable == null)
-        {
-           movil = false;
-        }
-        else movil = true;
+
     }
 
     // Update is called once per frame
@@ -49,12 +43,12 @@ public class CongelableManager : MonoBehaviour
     public void Congela(){
         _congelat =true;
         UpdateState();
-        if (movil) grabInteractable.enabled = true; 
+        grabInteractable?.enabled = true; 
         
     }
     public void Descongela(){
         _congelat=false;
         UpdateState();
-        if (movil) grabInteractable.enabled = false; // Deshabilitar
+        grabInteractable?.enabled = false; // Deshabilitar
     }
 }
