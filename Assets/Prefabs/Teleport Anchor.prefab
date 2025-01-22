@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teleport Anchor
       objectReference: {fileID: 0}
+    - target: {fileID: 5245132886647869428, guid: fad94b617f0540568dbf4c9c4011248c, type: 3}
+      propertyPath: magicTypes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245132886647869428, guid: fad94b617f0540568dbf4c9c4011248c, type: 3}
+      propertyPath: magicTypes.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245132886647869428, guid: fad94b617f0540568dbf4c9c4011248c, type: 3}
+      propertyPath: controledByMagicList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8164705571879959090, guid: fad94b617f0540568dbf4c9c4011248c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3

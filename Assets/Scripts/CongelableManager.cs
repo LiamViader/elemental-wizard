@@ -45,12 +45,12 @@ public class CongelableManager : MonoBehaviour
     public void Congela(){
         _congelat =true;
         UpdateState();
-        interactuableMagic?.AddMagicType(Magic.Aire)
+        interactuableMagic?.AddMagicType(Magic.Aire);
         
     }
     public void Descongela(){
         _congelat=false;
         UpdateState();
-        interactuableMagic?.RemoveMagicType(Magic.Aire)
+        interactuableMagic?.RemoveMagicType(Magic.Aire);
     }
 }

@@ -120,8 +120,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _congelat: 0
+  grabInteractable: {fileID: 0}
   _solidObject: {fileID: 979846159236154038}
   _liquidObject: {fileID: 591950249532109509, guid: acca3c0d8fec7844981050b344aae4e6, type: 3}
+  interactuableMagic: {fileID: 0}
 --- !u!114 &2852264893529371666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controledByMagicList: []
   controledByMagicListColliders: []
-  magicType: 2
+  magicTypes: 02000000
 --- !u!1 &3467434481556532719
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,8 +187,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _congelat: 1
+  grabInteractable: {fileID: 0}
   _solidObject: {fileID: 979846159236154038}
   _liquidObject: {fileID: 7284686735316742761}
+  interactuableMagic: {fileID: 0}
 --- !u!54 &294936319214705674
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -313,7 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controledByMagicList: []
   controledByMagicListColliders: []
-  magicType: 1
+  magicTypes: 01000000
 --- !u!4 &7465821129241096168 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 771396063995637572, guid: acca3c0d8fec7844981050b344aae4e6, type: 3}

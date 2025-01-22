@@ -20,19 +20,19 @@ public class InteractuableMagic : MonoBehaviour
 
     void OnEnable()
     {
-        
+
     }
 
     void OnDisable()
     {
-        WandController.Instance.MagicChanged -= OnMagicChanged;
+        //WandController.Instance.MagicChanged -= OnMagicChanged;
     }
 
 
     void Start()
     {
-
         WandController.Instance.MagicChanged += OnMagicChanged;
+
     }
 
     public void AddMagicType(Magic magictype)
