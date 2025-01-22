@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.2536254, g: 0.098039195, b: 0.65882355, a: 1}
+  m_FogColor: {r: 0.12682448, g: 0.13439865, b: 0.4716981, a: 1}
   m_FogMode: 2
   m_FogDensity: 0.06
   m_LinearFogStart: 0
@@ -32,11 +32,11 @@ RenderSettings:
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
-  m_DefaultReflectionMode: 0
+  m_DefaultReflectionMode: 1
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 0.845
-  m_CustomReflection: {fileID: 2800000, guid: d9cd3e94ff5cd6d44af3bce5f4415479, type: 3}
+  m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
