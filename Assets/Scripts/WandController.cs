@@ -125,7 +125,6 @@ public class WandController : MonoBehaviour
     {
         RotateMagic();
         UpdateMagicSelected();
-        UpdateOrbMaterial();
     }
 
     public void PerformCongelarDescongelar(){
@@ -171,6 +170,7 @@ public class WandController : MonoBehaviour
                 break;
         }
         UpdateEffects();
+        UpdateOrbMaterial();
         MagicChanged?.Invoke(magicList[_currentIndex]);
     }
 
