@@ -36,11 +36,9 @@ public class WandController : MonoBehaviour
     private float wandMagicDistance = 10000f;
 
     [SerializeField]
-    [Tooltip("The Input System Action that will be used to perform the magic swap. Must be a Button Control.")]
     InputActionProperty m_MagicSwapAction = new InputActionProperty(new InputAction("Grab Move", type: InputActionType.Button));
 
     [SerializeField]
-    [Tooltip("The Input System Action that will be used to perform the magic swap. Must be a Button Control.")]
     InputActionProperty m_CongelarDescongelarAction = new InputActionProperty(new InputAction("Grab Move", type: InputActionType.Button));
 
     [SerializeField]

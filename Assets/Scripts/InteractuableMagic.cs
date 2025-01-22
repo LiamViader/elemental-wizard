@@ -25,7 +25,7 @@ public class InteractuableMagic : MonoBehaviour
 
     void OnDisable()
     {
-        //WandController.Instance.MagicChanged -= OnMagicChanged;
+
     }
 
 
