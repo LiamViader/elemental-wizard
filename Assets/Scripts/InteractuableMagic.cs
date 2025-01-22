@@ -56,6 +56,7 @@ public class InteractuableMagic : MonoBehaviour
     public void Desactivar()
     {
         activat = false;
+        OnMagicChanged(lastMagicSelected);
     }
 
     public void Activar()
@@ -66,7 +67,6 @@ public class InteractuableMagic : MonoBehaviour
 
     public bool CanInteract(Magic selectedMagic)
     {
-        Debug.Log(magicTypes[0]);
         return activat && IsInfluencedByMagic(selectedMagic);
     }
 

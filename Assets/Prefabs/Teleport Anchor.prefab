@@ -70,8 +70,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5245132886647869428, guid: fad94b617f0540568dbf4c9c4011248c, type: 3}
       propertyPath: controledByMagicList.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5245132886647869428, guid: fad94b617f0540568dbf4c9c4011248c, type: 3}
+      propertyPath: controledByMagicList.Array.data[0]
+      value: 
+      objectReference: {fileID: 6565566427598424506}
     - target: {fileID: 5245132886647869428, guid: fad94b617f0540568dbf4c9c4011248c, type: 3}
       propertyPath: controledByMagicListColliders.Array.size
       value: 2
@@ -128,6 +132,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4051434471726627571}
   m_SourcePrefab: {fileID: 100100000, guid: fad94b617f0540568dbf4c9c4011248c, type: 3}
+--- !u!114 &6565566427598424506 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 912112059474804957, guid: fad94b617f0540568dbf4c9c4011248c, type: 3}
+  m_PrefabInstance: {fileID: 6320215988703103335}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87996e81a5026dc429bfd6a9271548b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8671104867666095445 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3449784919008568370, guid: fad94b617f0540568dbf4c9c4011248c, type: 3}

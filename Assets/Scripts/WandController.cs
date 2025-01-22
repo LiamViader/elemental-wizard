@@ -98,13 +98,11 @@ public class WandController : MonoBehaviour
         Ray ray = new Ray(rightController.transform.position, rightController.transform.forward);
         if (Physics.Raycast(ray, out RaycastHit hit, wandMagicDistance))
         {
-            Debug.Log("Objeto detectado: " + hit.collider.gameObject.name);
 
             InteractuableMagic interactuableMagic = hit.collider.GetComponent<InteractuableMagic>();
 
             if (interactuableMagic != null && interactuableMagic.CanInteract(magicList[_currentIndex]))
             {
-                Debug.Log("Interactuable");
 
                 if (!alreadyUsedHaptics.Contains(interactuableMagic))
                 {
