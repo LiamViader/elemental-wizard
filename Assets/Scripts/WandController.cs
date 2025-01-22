@@ -49,6 +49,7 @@ public class WandController : MonoBehaviour
     
     public event System.Action<Magic> MagicChanged;
 
+    public List<GameObject> magicEffects;
 
     
     private void Awake()
@@ -169,7 +170,17 @@ public class WandController : MonoBehaviour
                 Debug.Log("Terra");
                 break;
         }
+        UpdateEffects();
         MagicChanged?.Invoke(magicList[_currentIndex]);
+    }
+
+    private void UpdateEffects()
+    {
+        foreach (var effect in magicEffects)
+        {
+            effect.SetActive(false);
+        }
+        magicEffects[_currentIndex].SetActive(true);    
     }
 
     private void UpdateOrbMaterial()
