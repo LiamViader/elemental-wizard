@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b379b96865095a9469fc8ca147a792b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToChange: 
+  sceneToChange: FInal
 --- !u!65 &3697777760403980509
 BoxCollider:
   m_ObjectHideFlags: 0
