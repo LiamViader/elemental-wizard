@@ -18,6 +18,8 @@ public class CongelableManager : MonoBehaviour
     [SerializeField]
     private GameObject _liquidObject;
 
+    [SerializeField]
+    private InteractuableMagic interactuableMagic;
 
     private void Awake(){
         UpdateState();
@@ -43,12 +45,12 @@ public class CongelableManager : MonoBehaviour
     public void Congela(){
         _congelat =true;
         UpdateState();
-        grabInteractable?.enabled = true; 
+        interactuableMagic?.AddMagicType(Magic.Aire)
         
     }
     public void Descongela(){
         _congelat=false;
         UpdateState();
-        grabInteractable?.enabled = false; // Deshabilitar
+        interactuableMagic?.RemoveMagicType(Magic.Aire)
     }
 }

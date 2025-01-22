@@ -12,7 +12,7 @@ public class InteractuableMagic : MonoBehaviour
     private List<Collider> controledByMagicListColliders;
 
     [SerializeField]
-    private Magic magicType;
+    private List<Magic> magicTypes;
 
     private Magic lastMagicSelected=Magic.Terra;
 
@@ -35,6 +35,24 @@ public class InteractuableMagic : MonoBehaviour
         WandController.Instance.MagicChanged += OnMagicChanged;
     }
 
+    public void AddMagicType(Magic magictype)
+    {
+        magicTypes.Add(magictype);
+    }
+
+    public void RemoveMagicType(Magic magictype)
+    {
+        if (magicTypes.Contains(magictype))
+        {
+            magicTypes.Remove(magictype);
+        }
+    }
+
+    public bool IsInfluencedByMagic(Magic magictype)
+    {
+        return magicTypes.Contains(magictype);
+    }
+
     public void Desactivar()
     {
         activat = false;
@@ -48,7 +66,7 @@ public class InteractuableMagic : MonoBehaviour
 
     public bool CanInteract(Magic selectedMagic)
     {
-        return activat && selectedMagic == magicType;
+        return activat && IsInfluencedByMagic(selectedMagic);
     }
 
     void OnMagicChanged(Magic newMagic)
@@ -58,7 +76,7 @@ public class InteractuableMagic : MonoBehaviour
         {
             foreach (var monoBehaviour in controledByMagicList)
             {
-                if (newMagic == magicType)
+                if (IsInfluencedByMagic(newMagic))
                 {
                     monoBehaviour.enabled = true;
                 }
@@ -69,7 +87,7 @@ public class InteractuableMagic : MonoBehaviour
             }
             foreach (var monoBehaviour in controledByMagicListColliders)
             {
-                if (newMagic == magicType)
+                if (IsInfluencedByMagic(newMagic))
                 {
                     monoBehaviour.enabled = true;
                 }
