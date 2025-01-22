@@ -73,31 +73,30 @@ public class InteractuableMagic : MonoBehaviour
     void OnMagicChanged(Magic newMagic)
     {
         lastMagicSelected = newMagic;
-        if (activat)
+
+        foreach (var monoBehaviour in controledByMagicList)
         {
-            foreach (var monoBehaviour in controledByMagicList)
+            if (IsInfluencedByMagic(newMagic) && activat)
             {
-                if (IsInfluencedByMagic(newMagic))
-                {
-                    monoBehaviour.enabled = true;
-                }
-                else
-                {
-                    monoBehaviour.enabled = false;
-                }
+                monoBehaviour.enabled = true;
             }
-            foreach (var monoBehaviour in controledByMagicListColliders)
+            else
             {
-                if (IsInfluencedByMagic(newMagic))
-                {
-                    monoBehaviour.enabled = true;
-                }
-                else
-                {
-                    monoBehaviour.enabled = false;
-                }
+                monoBehaviour.enabled = false;
             }
         }
+        foreach (var monoBehaviour in controledByMagicListColliders)
+        {
+            if (IsInfluencedByMagic(newMagic) && activat)
+            {
+                monoBehaviour.enabled = true;
+            }
+            else
+            {
+                monoBehaviour.enabled = false;
+            }
+        }
+
 
     }
 }
