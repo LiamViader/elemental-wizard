@@ -1,5 +1,3 @@
-## Academic Project
-
 This project was developed as part of a university assignment in collaboration with 3 other students.
 
 ### My Contribution
