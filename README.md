@@ -1,4 +1,4 @@
-This project was developed as part of a university assignment in collaboration with 3 other students.
+This project was developed as part of a university assignment in collaboration with 3 other people.
 
 ### My Contribution
 - Designing and implementing core gameplay systems  
